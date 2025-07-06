@@ -44,7 +44,7 @@ int	ft_printf(const char *s, ...)
 	count = 0;
 	va_start(args, s);
 	if (!s)
-		return (0);
+		return (-1);
 	while (s[i])
 	{
 		if (s[i] == '%' && s[i + 1])
@@ -57,37 +57,40 @@ int	ft_printf(const char *s, ...)
 	return (count);
 }
 
-/*
+
 int	main(void)
 {
-	// int		d = 28;
-	// char	*s = "Gabriel";
-	// int		*ptr = &d;
+	int		d = 28;
+	char	*s = "Gabriel";
+	int		*ptr = &d;
 
 	// // std test
-	// printf("My name is %s and I'm %d years old.\n", s, d);
-	// ft_printf("My name is %s and I'm %d years old.\n", s, d);
+	printf("My name is %s and I'm %d years old.\n", s, d);
+	ft_printf("My name is %s and I'm %d years old.\n", s, d);
 
 	// // unsigned int test
-	// printf("Unsigned: %u\n", 4294967295u);
-	// ft_printf("Unsigned: %u\n", 4294967295u);
+	printf("Unsigned: %u\n", 4294967295u);
+	ft_printf("Unsigned: %u\n", 4294967295u);
 
 	// // hex lowercase
-	// printf("Hex lowercase: %x\n", 305441741);
-	// ft_printf("Hex lowercase: %x\n", 305441741);
+	printf("Hex lowercase: %x\n", 305441741);
+	ft_printf("Hex lowercase: %x\n", 305441741);
 
 	// // hex uppercase
-	// printf("Hex uppercase: %X\n", 305441741);
-	// ft_printf("Hex uppercase: %X\n", 305441741);
+	printf("Hex uppercase: %X\n", 305441741);
+	ft_printf("Hex uppercase: %X\n", 305441741);
 
 	// // pointer test
-	// printf("Pointer test: %p\n", ptr);
-	//ft_printf("Pointer test: %p\n", ptr);
+	printf("Pointer test: %p\n", ptr);
+	ft_printf("Pointer test: %p\n", ptr);
 	
-	// pointer test
-	printf("%%%%% \n");
-	ft_printf("%%%%% \n");
+	// NULL test
+	int lena = printf(NULL);
+	int lenb = ft_printf(NULL);
+	
+	printf("%d", lena);
+	printf("%d", lenb);
 
 	return (0);
 }
-*/
+
